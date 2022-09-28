@@ -1,0 +1,182 @@
+/*https://jqmtricks.wordpress.com/2014/12/01/content-div-height-css-solution/ */
+
+body{
+	margin: 0;
+	height: 100%;
+}
+
+html{
+	padding: 12px;
+	background-color: grey;
+}
+
+.mainContainer{
+	width: 100%; 
+}
+
+.canvasContainer{
+	padding: 0;
+	margin: 0;
+	overflow:hidden;
+	height: 100%;
+	position: relative;
+}
+
+.canvasContainer canvas, .overlay{
+	position: absolute;
+	margin: 0 auto;
+}
+
+.canvasContainer .overlay{
+	border-left: 12px solid grey;
+	border-top: 12px solid grey;
+	border-bottom: 12px solid grey;
+	border-right: 12px solid grey;
+	left: 25%;
+	top: 25px;
+}
+
+#saveOverlay{
+	background-color: black;
+	width: 50%;
+	height: 250px;
+	text-align: center;
+	color: white;
+}
+
+#loadOverlay{
+	background-color: black;
+	width: 50%;
+	height: 250px;
+	text-align: center;
+	color: white;
+}
+
+.sideContainer{
+	margin: 0;
+	border-left: 12px solid grey;
+	width: 300px;
+	height: 100%;
+	background-color: black;
+	float: right;
+}
+
+.mainMenu{
+	text-align: center;
+}
+
+.mainMenuItem{
+	color: white;
+}
+
+.menuItemSpaced{
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.controls{
+	border: 2px solid white;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.controlsHeader{
+	color: white;
+	text-align: center;
+}
+
+.controlTitle{
+	color: white;
+	display: table-cell;
+}
+
+.controlValues{
+	color: white;
+	margin-left: 10px;
+	display: table-cell;
+}
+
+.controlValues div{
+	margin-left: 10px;
+}
+
+.controlKey{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.controlSection{
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loadMapItem{
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border: 1px solid white;
+	font-size: 16px;
+}
+
+.modeOption{
+	padding-top: 4px;
+	padding-lefT: 6px;
+	padding-bottom: 4px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	width: 150px;
+	cursor: pointer;
+}
+
+.modeOption:hover{
+	border: 1px solid grey;
+}
+
+.validationError{
+	color: red;
+}
+
+#layerContainer{
+	color: cyan;
+	text-align: right;
+	margin-right: -10px;
+	float: right;
+}
+
+#modeLabel{
+	color: White;
+}
+
+.menuButton{
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+
+.mainMenuMapButton{
+	width: 185px;
+	margin-bottom: 5px;
+}
+
+#downloadButton{
+	font-size: 18px;
+}
+
+#saveButton{
+	font-size: 18px;
+}
+
+#loadButton{
+	font-size: 18px;
+}
+
+#mapName{
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+}
+

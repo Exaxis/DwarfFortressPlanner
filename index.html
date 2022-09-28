@@ -1,0 +1,120 @@
+<!--
+	DWARF FORTRESS PLANNER
+	Made by: Mahlon Winstead
+	
+	Purpose:
+	This is a tool that should allow a Dwarf Fortress player to quickly sketch 
+	up ideas for their fortresses.
+	 -->
+
+<html>
+	<head>
+			<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+	
+	<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+		
+		<link rel="stylesheet" href="client.css"></script>
+	</head>
+	<body>
+		<div class="mainContainer">
+			<table style="width: 100%; height: 100%;">
+				<tr style="height: 100%;">
+					<td style="height: 100%">
+						<div class="canvasContainer">
+							<canvas id="mainCanvas" style="width:100%; height:100%"></canvas>
+							<div id="saveOverlay" class="overlay" style="visibility: hidden;">
+								<div class="menuItemSpaced">SAVE MAP</div>
+								<div>Map Name: <input id="mapNameInput" type="text" value="NEW MAP"></div>
+								<div class="menuItemSpaced"><input id="saveCancelButton" type="button" class="menuButton" value="CANCEL"/><input id="saveConfirmButton" type="button" class="menuButton" value="SAVE"/></div>
+								<div id="mapNameError" class="validationError menuItemSpaced" style="visibility: hidden;">Map name cannot be empty</div>
+							</div>
+							
+							<div id="loadOverlay" class="overlay" style="visibility: hidden;">
+								<div class="menuItemSpaced">LOAD MAP</div>
+								<div>Select a map:</div>
+								<div id="loadMapList"></div>
+								<div class="menuItemSpaced"><input id="loadCancelButton" type="button" class="menuButton" value="CANCEL"/></div>
+								<div id="mapsNotFoundError" class="validationError menuItemSpaced" style="visibility: hidden;">No maps were found. You must save a map before loading one.</div>
+								
+							</div>
+						</div>
+					</td>
+					<td style="height: 100%; width:300px;">
+						<div class="sideContainer">
+							<div id="layerContainer">
+								<div id="layerLabel1" class="layerLabel">2</div>
+								<div id="layerLabel2" class="layerLabel"></div>
+							</div>
+							<div class="mainMenu menuItemSpaced">
+								<div class="mainMenuItem">Current Mode: <span id="modeLabel">Dig</span></div>
+							</div>
+			
+							<div class="controls">
+								<div class="controlsHeader">Controls</div>
+			
+								<div class="controlSection menuItemSpaced">
+									<div class="controlTitle">
+										Modes: 
+									</div>
+									<div class="controlValues">
+										<div class="modeOption">D - <span class="controlKey">D</span>ig Flooring</div>
+										<div class="modeOption">E - Make <span class="controlKey">E</span>mpty Space</div>
+										<div class="modeOption">W - Place Stone <span class="controlKey">W</span>all</div>
+										<div class="modeOption">R - Place Up <span class="controlKey">R</span>amp </div>
+										<div class="modeOption">S - Place <span class="controlKey">S</span>tairs</div>
+										<div class="modeOption">G - Place <span class="controlKey">G</span>rass</div>
+										<div class="modeOption">A - Place w<span class="controlKey">A</span>ter</div>
+										<div class="modeOption">F - Place <span class="controlKey">F</span>arm Plot</div>
+										<div class="modeOption">T - Place <span class="controlKey">T</span>able</div>
+										<div class="modeOption">O - Place w<span class="controlKey">O</span>rkshop</div>
+										<div class="modeOption">= - Place Door </div>
+									</div>
+								</div>
+			
+								<div class="controlSection menuItemSpaced">
+									<div class="controlTitle">Move Cursor:</div>
+									<div class="controlValues"><div>Arrow Keys</div></div>
+								</div>
+			
+								<div class="controlSection menuItemSpaced">
+									<div class="controlTitle">Change Layer:</div>
+									<div class="controlValues">
+										<div> Up: &lt;</div>
+										<div>Down: &gt;</div>
+									</div>
+								</div>
+			
+								<div class="controlSection menuItemSpaced">
+									<div class="controlTitle">Select Tile(s):</div>
+									<div class="controlValues"><div>ENTER</div></div>
+								</div>
+			
+								<div class="controlSection menuItemSpaced">
+									<div class="controlTitle">Cancel Selection:</div>
+									<div class="controlValues"><div>ESC</div></div>
+								</div>
+							</div>
+							<div class="mainMenu menuItemSpaced">
+								<div><input id="downloadButton" type="button" value="Download Map" class="mainMenuItem menuButton mainMenuMapButton"/></div>
+								<div><input id="saveButton" type="button" value="Save Map" class="mainMenuItem menuButton mainMenuMapButton"/></div>
+								<div><input id="loadButton" type="button" value="Load Map" class="mainMenuItem menuButton mainMenuMapButton"/></div>
+							</div>
+							
+							<div id="mapName" class="mainMenu mainMenuItem">NEW MAP</div>
+							
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>	
+		
+		<script src="./client.js"></script>
+	</body>
+	
+</html>
